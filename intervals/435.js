@@ -15,6 +15,7 @@
   
   for (let i = 1; i < intervals.length; i++) {
       if (intervals[i][0] < end) { //if current element's lower value is less than the previous element's upper value, there's an overlap, increment count as previous interval should be removed
+          end = Math.min(end, intervals[i][1]); //take the interval that covers the smallest range i.e. has the smaller upper value as to avoid more overlaps, looking for a MINIMUM number of removed intervals
           count++;
       } else { //if no overlap, set end to the upper value of the current interval and compare it to the next interval's bottom value in the same way on the next loop through. This evidently means we don't increment count as there is no overlap
           end = intervals[i][1];
