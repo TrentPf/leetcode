@@ -30,7 +30,7 @@
       }
       
       usedRooms += 1; //increment regardless of room freeing up or not. If no free room, we add a room to the counter, if  there is a free room, we add a room to the counter, but we already removed one in the previous conditional, so works out to no change
-      startPointer += 1;
+      startPointer += 1; //pointer acts as the main looping mechanism, always increments so as to compare every start time to the current highest end time
   }
   
   return usedRooms;
